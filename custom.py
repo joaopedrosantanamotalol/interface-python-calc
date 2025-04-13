@@ -27,5 +27,8 @@ btn3 = e.CTkButton(janela, text="Subtração", command=lambda:telas.janela3(jane
 btn3.configure(hover_color="green")
 btn3.place(x=50, y=280)
 
+btn4 = e.CTkButton(janela, text="Mais", command=lambda:telas.janela4(janela), fg_color="blue", border_color="white", border_width=4, height=50)
+btn4.configure(hover_color="green")
+btn4.place(x=240, y=280)
 
 janela.mainloop()
