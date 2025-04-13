@@ -71,7 +71,7 @@ def janela3(janela):
     ipt2 = e.CTkEntry(janela3, placeholder_text="digite outro numero")
     ipt2.place(x=10, y=130)
 
-    btpegar = e.CTkButton(janela3, text="pegar", command=clique).place(x=10, y=160)
+    bntIr = e.CTkButton(janela3, text="subtrair", command=lambda:clique()).place(x=10, y=190)
 
     mostrar = e.CTkLabel(janela3, text=" ")
     mostrar.place(x=10, y=160)
