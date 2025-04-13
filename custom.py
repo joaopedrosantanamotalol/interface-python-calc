@@ -6,7 +6,7 @@ janela = e.CTk()
 janela.lower()
 janela.title("Minha Janela")
 janela.maxsize(500, 400)
-janela.geometry("400x300")
+janela.geometry("400x500")
 janela._set_appearance_mode("dark")
 janela.configure(fg_color="teal")
 
@@ -22,5 +22,10 @@ btn1.place(x=50, y=200)
 btn2 = e.CTkButton(janela, text="Multiplicação", command=lambda:telas.JanelaTroll(janela), fg_color="purple", border_color="white", border_width=4, height=50)
 btn2.configure(hover_color="green")
 btn2.place(x=240, y=200)
+
+btn3 = e.CTkButton(janela, text="Subtração", command=lambda:telas.janela3(janela), fg_color="blue", border_color="white", border_width=4, height=50)
+btn3.configure(hover_color="green")
+btn3.place(x=50, y=280)
+
 
 janela.mainloop()
