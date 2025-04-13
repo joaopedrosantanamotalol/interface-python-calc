@@ -13,3 +13,12 @@ def multiplicacao(a,b):
         return a * b
     except ValueError:
         return "Entrada inválida"
+    
+def subtracao(a,b):
+    try:
+        a = float(a)
+        b = float(b)
+        return a - b
+    except ValueError:
+        return "Entrada inválida"
+        
