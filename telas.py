@@ -83,4 +83,45 @@ def janela3(janela):
         except Exception as ex:
             mostrar.configure(text=f"Erro: {ex}")
 
-    
+
+def janela4(janela):
+    janela_registro = e.CTkToplevel(janela, fg_color="darkblue")
+    janela_registro.geometry("800x600")
+    janela_registro.title("Registro")
+    janela_registro.transient(janela)
+
+    titulo = e.CTkLabel(janela_registro, text="Tela de registro", text_color="White", font=("Arial", 20, "bold"), bg_color="transparent").place(x=150, y=10)
+    quadro = e.CTkFrame(janela_registro, width=600, height=400, bg_color="gray", border_color="darkgray", border_width=3).place(x=50, y=70)
+    labelRegistro = e.CTkLabel(janela_registro, text="Nome", text_color="White", font=("Arial", 14, "bold")).place(x=50, y=90)
+    ipt1 = e.CTkEntry(janela_registro, placeholder_text="Digite o nome do usuario")
+    ipt1.place(x=50, y=110)
+    labelRegistro2 = e.CTkLabel(janela_registro, text="Email", text_color="White", font=("Arial", 14, "bold")).place(x=50, y=130)
+    ipt2 = e.CTkEntry(janela_registro, placeholder_text="Digite o email do usuario")
+    ipt2.place(x=50, y=150)
+    labelRegistro3 = e.CTkLabel(janela_registro, text="Senha", text_color="White", font=("Arial", 14, "bold")).place(x=50, y=170)
+    ipt3 = e.CTkEntry(janela_registro, placeholder_text="Digite a senha do usuario", show="*")
+    ipt3.place(x=50, y=190)
+    btn = e.CTkButton(janela_registro, text="Cadastrar", command=lambda: criar_registro(ipt1, ipt2, ipt3, janela_registro)).place(x=50, y=220)
+    registros = []
+
+    def criar_registro(ipt1, ipt2, ipt3, janela_registro):
+        nome = ipt1.get()
+        email = ipt2.get()
+        senha = ipt3.get()
+
+        usuario = {
+            "nome": nome,
+            "email": email,
+            "senha": senha
+        }
+
+        registros.append(usuario)
+        mostrar_registros(janela_registro)
+
+    def mostrar_registros(janela_registro):
+        y = 250
+        for registro in registros:
+            label_nome = e.CTkLabel(janela_registro, text=f"Nome: {registro['nome']}", text_color="White", font=("Arial", 14, "bold")).place(x=50, y=y)
+            label_email = e.CTkLabel(janela_registro, text=f"Email: {registro['email']}", text_color="White", font=("Arial", 14, "bold")).place(x=50, y=y+30)
+            label_senha = e.CTkLabel(janela_registro, text=f"Senha: {registro['senha']}", text_color="White", font=("Arial", 14, "bold")).place(x=50, y=y+60)
+            y += 90
